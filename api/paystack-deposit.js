@@ -10,13 +10,13 @@ export default async function handler(req, res) {
     const response = await fetch("https://api.paystack.co/transaction/initialize", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.sk_live_d80b6a76b47dad1a6a2636634d098a26130a5484}`,
+        Authorization: `Bearer ${process.env.sk_live_d80b6a76b47dad1a6a2636634d098a26130a5484}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email,
         amount: amount * 100, // Paystack expects kobo
-        callback_url: "https://yourapp.vercel.app/payment-success"
+        callback_url: "https://GTRADE.vercel.app/payment-success"
       }),
     });
 
